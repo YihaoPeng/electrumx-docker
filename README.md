@@ -16,16 +16,11 @@ For AltCoins,edit your coin class in `env/coins.py`.`env/coins.py` will be appen
 
 Leave others defaults
 
-### Step 2.Run
-Run from docker hub:
+### Step 2. Build & Run
 ```shell
-    docker run -v env:/env  -idt followtheart/electrumx
-```
-
-Or,build your special env docker image :
-```shell
-      docker build -t electrumx .
-      docker run -v -idt electrumx
+docker build -t electrumx .
+mkdir /work/electrumx-db
+docker run -it -v /work/electrumx-db:/db --name electrumx --net=host --restart always -d electrumx
 ```
 
 ## THANKS
