@@ -19,9 +19,16 @@ Leave others defaults
 ### Step 2. Build & Run
 ```shell
 docker build -t electrumx .
-mkdir /work/electrumx-db
-chown -R 1000:999 /work/electrumx-db
-docker run -it -v /work/electrumx-db:/db --name electrumx --net=host --restart always -d electrumx
+
+mkdir /work/electrumx
+mkdir /work/electrumx/db
+mkdir /work/electrumx/env
+mkdir /work/electrumx/log
+cp -r env/* /work/electrumx/env/
+chown -R 1000:1000 /work/electrumx/*
+
+docker run -it -v /work/electrumx/db:/db -v /work/electrumx/env:/env -v /work/electrumx/log:/log --name electrumx --net=host --restart always -d electrumx
+
 docker exec -it electrumx bash
 ```
 
