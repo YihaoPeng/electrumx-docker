@@ -20,7 +20,9 @@ Leave others defaults
 ```shell
 docker build -t electrumx .
 mkdir /work/electrumx-db
+chown -R 1000:999 /work/electrumx-db
 docker run -it -v /work/electrumx-db:/db --name electrumx --net=host --restart always -d electrumx
+docker exec -it electrumx bash
 ```
 
 ## THANKS
