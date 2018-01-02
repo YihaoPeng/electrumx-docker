@@ -27,7 +27,7 @@ mkdir /work/electrumx/log
 cp -r env/* /work/electrumx/env/
 chown -R 1000:1000 /work/electrumx/*
 
-docker run -it -v /work/electrumx/db:/db -v /work/electrumx/env:/env -v /work/electrumx/log:/log --name electrumx --net=host --restart always -d electrumx
+docker run -it -v /work/electrumx/db:/db -v /work/electrumx/env:/env -v /work/electrumx/log:/log --name electrumx -p 8009:8009 --restart always -d electrumx
 
 docker exec -it electrumx bash
 ```
