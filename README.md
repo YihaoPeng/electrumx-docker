@@ -5,7 +5,7 @@ Dockerfile for [electrumx](https://github.com/kyuupichan/electrumx) on Ubuntu wi
 ### Step 1. Configuration
 ```
 git clone https://github.com/YihaoPeng/electrumx-docker-ubtc.git
-cd electrumx-docker
+cd electrumx-docker-ubtc
 ```
 
 Then,Edit `env/COIN` to your coin.
