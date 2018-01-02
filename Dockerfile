@@ -39,7 +39,6 @@ RUN cd ~ \
     && sed -i '$d' ~/scripts/electrumx/log/run \
     && sed -i '$a\exec multilog t s500000 n10 /log' ~/scripts/electrumx/log/run  \
     && cp /env/* /home/electrumx/scripts/electrumx/env/ \
-    && cat ~/scripts/electrumx/env/coins.py >> ~/electrumx/lib/coins.py \
     && ln -s ~/scripts/electrumx  ~/service/electrumx
 
 USER root
