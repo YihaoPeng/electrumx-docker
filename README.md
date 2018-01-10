@@ -8,11 +8,7 @@ git clone https://github.com/YihaoPeng/electrumx-docker-ubtc.git
 cd electrumx-docker-ubtc
 ```
 
-Then,Edit `env/COIN` to your coin.
-
-Edit `env/DAEMON_URL` accordingly.Need to match your daemon.
-
-For AltCoins,edit your coin class in `env/coins.py`.`env/coins.py` will be append to [electrumx/lib/coins.py](https://github.com/kyuupichan/electrumx/blob/master/lib/coins.py)
+Then,edit `env/DAEMON_URL` accordingly.Need to match your daemon.
 
 Leave others defaults
 
@@ -27,7 +23,7 @@ mkdir /work/electrumx/log
 cp -r env/* /work/electrumx/env/
 chown -R 1000:1000 /work/electrumx/*
 
-docker run -it -v /work/electrumx/db:/db -v /work/electrumx/env:/env -v /work/electrumx/log:/log --name electrumx -p 8009:8009 --restart always -d electrumx
+docker run -it -v /work/electrumx/db:/db -v /work/electrumx/env:/env -v /work/electrumx/log:/log --name electrumx -p 127.0.0.1:8009:8009 -p 50001:50001 -p 50002:50002 --restart always -d electrumx
 
 docker exec -it electrumx bash
 ```
